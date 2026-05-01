@@ -2,13 +2,12 @@ package modeloCDT;
 
 public class CDTDAO {
 
-	private static final double ANIO = 365;
+	private static final double ANIO = 360;
 
 	public static void calcular(CDT cdt) {
 
 		double ganancia =
-			cdt.getInversion() *
-			(cdt.getInteres() * (cdt.getPlazo() / ANIO));
+			cdt.getInversion() * ((cdt.getInteres()*0.01) * (cdt.getPlazo() / ANIO));
 
 		double impuesto = ganancia * 0.04;
 
